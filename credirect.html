@@ -28,8 +28,14 @@ function findGetParameter(parameterName) {
     }
     return result;
 }
-  
-window.location.href="https://www.coupang.com/vp/products/"+findGetParameter("itemId")+"?itemId=" + findGetParameter("optionId") + "&isAddedCart=";
+
+var url = "https://www.coupang.com/vp/products/"+findGetParameter("itemId")+"?itemId=" + findGetParameter("optionId") + "&isAddedCart=";
+
+if(findGetParameter("vendorItemId") != null) {
+    url += "&vendorItemId=" + findGetParameter("vendorItemId");
+}
+
+window.location.href=url;
 </script>
 </body>
 </html>
